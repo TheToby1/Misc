@@ -4,14 +4,14 @@ import sys
 def searcher(start, end):
     #print start
     try:
-        if end in dick[start]:
+        if end in dic[start]:
             return True
-        elif start in dick[end]:
+        elif start in dic[end]:
             return True
         else:
-            for things in dick[start]:
-                dick[things].remove(start)
-                dick[start].remove(things)
+            for things in dic[start]:
+                dic[things].remove(start)
+                dic[start].remove(things)
                 if searcher(things,end):
                     return True
     except:
@@ -27,22 +27,22 @@ times = int(filein.pop(0))
 mapp = filein[0:times]
 #print mapp
 
-dick = {}
+dic = {}
 
 for thing in mapp:
     thing = thing.split()
     first = (thing[0],thing[1])
     second = [(thing[2],thing[3])]
-    dick[first] = second
+    dic[first] = second
 for thing in mapp:
     thing = thing.split()
     first = (thing[0],thing[1])
     second = (thing[2],thing[3])
     try:
-        dick[second].append(first)
+        dic[second].append(first)
     except:
-        dick[second] = [first]
-#print dick
+        dic[second] = [first]
+#print dic
 
 querys = filein[times+1:]
 #print querys

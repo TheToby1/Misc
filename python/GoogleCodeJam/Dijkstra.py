@@ -11,7 +11,7 @@ times = int(filein.pop(0))
 count = 0
 x = 0
 answer = False
-dick = {'ii':'-1','ij':'+k','ik':'-k','ji':'-k','jj':'-1','jk':'+i','ki':'+j','kj':'-i','kk':'-1'}
+dic = {'ii':'-1','ij':'+k','ik':'-k','ji':'-k','jj':'-1','jk':'+i','ki':'+j','kj':'-i','kk':'-1'}
 
 with open("output3.in", "w") as fout:
     sign = True
@@ -49,7 +49,7 @@ with open("output3.in", "w") as fout:
                         mult = spellinglong[0:2]
                         spellinglong = spellinglong[2:]
                         print mult
-                        mult = dick[mult]
+                        mult = dic[mult]
                         if mult[0] == '+': sign = True
                         else: sign = False
                         if "1" not in mult:
